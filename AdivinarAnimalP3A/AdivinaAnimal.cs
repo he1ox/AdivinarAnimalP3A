@@ -39,7 +39,7 @@ namespace AdivinarAnimalP3A
                         }
                         else
                         {
-                            animalNuevo(nuevo);
+                            animalNuevo(nodo);
                         }
                         nodo = null;
                         return;
