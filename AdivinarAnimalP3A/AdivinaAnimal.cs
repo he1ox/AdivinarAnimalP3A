@@ -62,5 +62,32 @@ namespace AdivinarAnimalP3A
 
             }
         }
+
+        private void animalNuevo(NodoArbol nodo)
+        {
+            String animalNodo = (String)nodo.valor;
+            Console.WriteLine("¿Cuál es el animal en el que estabas pensando?");
+            String nuevoAnimal = Console.ReadLine();
+
+            Console.WriteLine($"¿Qué pregunta con respuesta si/no se puede hacer para decir que es un {nuevoAnimal}");
+            var pregunta = Console.ReadLine();
+            NodoArbol nodoUno = new NodoArbol(animalNodo);
+            NodoArbol nodoDos = new NodoArbol(nuevoAnimal);
+
+            Console.WriteLine($"Para {nuevoAnimal} la respuesta sería si o no a la pregunta {pregunta}?");
+
+            //Respuesta es sí
+            if (respuesta())
+            {
+                //True = lo inserta en la izquierda
+                nodo.izquierda = nodoDos; //nuevoAnimal
+                nodo.derecha = nodoUno; //animalNodo
+            }
+            else
+            {
+                nodo.izquierda = nodoUno;
+                nodo.derecha = nodoDos;
+            }
+        }
     }
 }
