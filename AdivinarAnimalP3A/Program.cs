@@ -9,6 +9,7 @@ AdivinaAnimal juego = new();
 do
 {
     juego.Jugar();
+    Console.Clear();
     Console.WriteLine("Jugamos otra vez?");
     otroJuego = juego.respuesta();
 } while (otroJuego);

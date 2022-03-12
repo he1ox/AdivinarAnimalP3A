@@ -27,12 +27,12 @@ namespace AdivinarAnimalP3A
                     {
                         //Hay una pregunta
                         Console.WriteLine(nodo.valor);
-                        //nodo = (respuesta()) ? nodo.izquierda : nodo.derecha;
+                        nodo = (respuesta()) ? nodo.izquierda : nodo.derecha;
                     }
                     else
                     {
                         //Se tiene un animal
-                        Console.WriteLine($"Debe de ser un {nodo.valor}");
+                        Console.WriteLine($"Debe de ser un {nodo.valor}? si/no");
                         if (respuesta())
                         {
                             Console.WriteLine("Gané!");
@@ -75,6 +75,8 @@ namespace AdivinarAnimalP3A
             NodoArbol nodoDos = new NodoArbol(nuevoAnimal);
 
             Console.WriteLine($"Para {nuevoAnimal} la respuesta sería si o no a la pregunta {pregunta}?");
+
+            nodo.valor = $"{pregunta}?";
 
             //Respuesta es sí
             if (respuesta())
